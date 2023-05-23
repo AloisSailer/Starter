@@ -33,3 +33,16 @@ form {
   border-radius: 8px;
   max-width: 730px;
 }
+
+form h1 {
+  font-size: 36px;
+}
+
+form fieldset {
+  margin-top: 64px;
+  border: 0;
+}
+
+form legend {
+  margin-bottom: 40px;
+}
