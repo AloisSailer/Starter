@@ -77,3 +77,29 @@ form select {
   -moz-appearance: none;
   appearance: none;
 }
+
+form label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+form .field-group .field + field {
+  margin-left: 24px;
+}
+
+form button {
+  width: 260px;
+  height: 56px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: var(--branco);
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin-top: 40px;
+  transition: background-color 400ms;
+}
+
+form button:hover {
+  background-color: var(--verde-hover);
+}
