@@ -9,6 +9,7 @@
   --primary-color: #34cb79;
   --verde-hover: #2fb86e;
   --branco: #fff;
+  --branco-gelo: #f0f0f5;
 }
 
 html {
@@ -16,7 +17,7 @@ html {
 }
 
 body {
-  background: #f0f0f5;
+  background: var(--branco-gelo);
   -webkit-font-smoothing: antialiased;
 }
 
