@@ -4,15 +4,19 @@
   width: 100vw;
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transistion: 400ms;
+}
+
+#modal.hide {
+  display: none;
 }
 
 #modal .content {
   color: var(--branco);
   width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #modal .header {
@@ -48,11 +52,23 @@
 }
 
 #modal form input {
-  felx: 1;
+  flex: 1;
   background-color: var(--branco-gelo);
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
   border: 0;
   padding: 16px 24px;
   font-size: 16px;
   color: var(--cinza);
+}
+
+#modal form button {
+  width: 72px;
+  height: 72px;
+  background-color: var(--primary-color);
+  border: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+#modal form button:hover {
+  background-color: var(--verde-hover);
 }
