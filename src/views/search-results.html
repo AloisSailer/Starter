@@ -15,32 +15,19 @@ title %}
   </h4>
 
   <div class="cards">
+    {% for place in places %}
+
     <div class="card">
-      <img
-        src="https://media.istockphoto.com/id/1372577388/pt/foto/old-electronic-devices-on-a-dark-background-the-concept-of-recycling-and-disposal-of.jpg?s=2048x2048&w=is&k=20&c=WjUr0WfbAq_qztVpMgt5ZuggoLl8lKRyHXGzzxq50go="
-        alt="Colectoria"
-      />
-      <h1>Colectoria</h1>
-      <h3>Resuídos Eletrônicos, Lâmpadas</h3>
+      <img src="{{ place.image }}" alt="{{ place.name }}" />
+      <h1>{{ place.name }}</h1>
+      <h3>{{ place.items}}</h3>
       <p>
-        Rio do Sul, Santa Catarina<br />
-        Guilherme Gemballa, Jardim América<br />
-        n° 260
+        {{ place.city }}, {{ place.state }}<br />
+        {{ place.adress}}<br />
+        {{ place.adress2}}
       </p>
     </div>
-    <div class="card">
-      <img
-        src="https://images.unsplash.com/photo-1507560461415-997cd00bfd45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-        alt="Papersider"
-      />
-      <h1>Papersider</h1>
-      <h3>Papéis e Papelão</h3>
-      <p>
-        Rio do Sul, Santa Catarina<br />
-        Guilherme Gemballa, Jardim América<br />
-        n° 260
-      </p>
-    </div>
+    {% endfor %}
   </div>
 </main>
 {% endblock content %}
