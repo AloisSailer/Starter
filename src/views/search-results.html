@@ -9,8 +9,9 @@ title %}
 %}
 
 <main>
+  {% if total > 0 %}
   <h4>
-    <strong>2 pontos</strong>
+    <strong>{{total}} pontos</strong>
     encontrados
   </h4>
 
@@ -29,5 +30,12 @@ title %}
     </div>
     {% endfor %}
   </div>
+  {%else%}
+  <h4><strong>Nenhum</strong> local encontrado</h4>
+  {% endif %}
 </main>
 {% endblock content %}
+
+<!-- 
+  http://localhost:3000/create-point?name=Alois+Sailer&image=https%3A%2F%2Fwww.google.com&address=Rua+Miguel+Cervantes+458+%2F+207&address2=207&uf=33&state=Rio+de+Janeiro&city=Rio+de+Janeiro&items=L%C3%A2mpadas%2CPilhas+e+Baterias 
+-->

@@ -8,8 +8,8 @@ module.exports = db
 // utilizar o objeto de banco de dados, para nossas operações
 // db.serialize(() => {
 // com commandos SQL eu vou:
-// // 1 Criar uma tabela
-// db.run(`
+// 1 Criar uma tabela
+//   db.run(`
 //     CREATE TABLE IF NOT EXISTS places (
 //         id INTEGER PRIMARY KEY AUTOINCREMENT,
 //         image TEXT,
@@ -21,8 +21,8 @@ module.exports = db
 //         items TEXT
 //     );
 // `)
-// // 2 Inserir dados na tabela
-// const query = `
+// 2 Inserir dados na tabela
+//   const query = `
 //     INSERT INTO places (
 //         image,
 //         name,
@@ -33,23 +33,23 @@ module.exports = db
 //         items
 //     ) VALUES (?,?,?,?,?,?,?);
 // `
-// const values = [
+//   const values = [
 //     "https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
 //     "Papersider",
 //     "Guilherme Gemballa, Jardim América",
 //     "Número 260",
 //     "Santa Catarina",
 //     "Rio do Sul",
-//     "Resíduos Eletrônicos, Lâmpadas"
-// ]
-// function afterInsertData(err) {
-//     if(err) {
-//         return console.log(err)
+//     "Resíduos Eletrônicos, Lâmpadas",
+//   ]
+//   function afterInsertData(err) {
+//     if (err) {
+//       return console.log(err)
 //     }
 //     console.log("Cadastrado com sucesso")
 //     console.log(this)
-// }
-// db.run(query, values, afterInsertData)
+//   }
+//   db.run(query, values, afterInsertData)
 // 3 Consultar os dados da tabela
 // db.all(`SELECT name FROM places`, function(err, rows) {
 //     if(err) {
