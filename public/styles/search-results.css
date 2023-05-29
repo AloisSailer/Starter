@@ -1,11 +1,16 @@
+body {
+  background-color: var(--branco);
+}
+
 body::after {
   content: "";
-  position: fixed;
-  background: var(--branco);
-  top: 260px;
+  position: absolute;
+  background: var(--branco-gelo);
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  height: 16rem;
   z-index: -1;
 }
 

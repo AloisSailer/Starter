@@ -31,7 +31,7 @@ server.get("/create-point", (req, res) => {
   // req.query: Query Strings da nossa url
   // console.log(req.query)
 
-  return res.render("create-point.html", { saved: true })
+  return res.render("create-point.html")
 })
 
 server.post("/savepoint", (req, res) => {
@@ -63,7 +63,8 @@ server.post("/savepoint", (req, res) => {
 
   function afterInsertData(err) {
     if (err) {
-      return console.log(err)
+      console.log(err)
+      return res.send("Erro no cadastro!")
     }
     console.log("Cadastrado com sucesso")
     console.log(this)
@@ -74,14 +75,24 @@ server.post("/savepoint", (req, res) => {
 })
 
 server.get("/search", (req, res) => {
-  db.all(`SELECT * FROM places`, function (err, rows) {
-    if (err) {
-      return console.log(err)
+  const search = req.query.search
+
+  // pesquisa vazia
+  if (search == "") {
+    return res.render("search-results.html", { total: 0 })
+  }
+
+  db.all(
+    `SELECT * FROM places WHERE city LIKE = '%${search}%'`,
+    function (err, rows) {
+      if (err) {
+        return console.log(err)
+      }
+      const total = rows.length
+      // mostrar a página html com os dados do banco de dados
+      return res.render("search-results.html", { places: rows, total }) // total - igual como: total:total
     }
-    const total = rows.length
-    // mostrar a página html com os dados do banco de dados
-    return res.render("search-results.html", { places: rows, total }) // total - igual como: total:total
-  })
+  )
 })
 
 // ligar o servidor
